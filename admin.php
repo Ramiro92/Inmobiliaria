@@ -20,12 +20,12 @@ if (@!$_SESSION['nombre']) {
 
 	<!-- Latest compiled and minified JavaScript -->
 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/estilos.css" rel="stylesheet"/>
 
 
   </head>
-<body data-offset="40" background="images/fondotot.jpg" style="background-attachment: fixed">
-<div class="container">
+<body >
+<div class="container-fluid">
 <header class="header">
 <div class="row">
 	<?php
