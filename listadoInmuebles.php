@@ -109,7 +109,7 @@ if (@!$_SESSION['nombre']) {
 						$resborrar=mysql_query($sqlborrar);
 						//echo '<script>alert("REGISTRO ELIMINADO")</script> ';
 						//header('Location: proyectos.php');
-						echo "<script>location.href='admin.php'</script>";
+						echo "<script>location.href='listadoInmuebles.php'</script>";
 					}
 
 			?>
