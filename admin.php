@@ -53,7 +53,7 @@ if (@!$_SESSION['nombre']) {
 
 		<div class="row-fluid">
 		<header>
-		<div class="container-fluid">
+		<div class="container">
 			<h1>Administracion de Inmuebles Registrados</h1>
 		</div>
 	</header>
@@ -61,14 +61,14 @@ if (@!$_SESSION['nombre']) {
 		<div class="main row">
 		<div class="col-md-12">
 			
-			<?php
+<!-- 			<?php
 
 				require("conexion.php");
 				$sql=("SELECT * FROM inmuebles");
 				$query=mysql_query($sql);
 
 				echo "<div class='row'>";				
-					echo "<div class='col-md-1'>Id</div>";
+						echo "<div class='col-md-1'>Id</div>";
 						echo "<div class='col-md-1'>Codigo</div>";
 						echo "<div class='col-md-1'>Numero</div>";
 						echo "<div class='col-md-2'>Direccion</div>";
@@ -99,7 +99,7 @@ if (@!$_SESSION['nombre']) {
 				    	echo "<div class='col-md-1'>$arreglo[8]</div>";
 
 				    	echo "<div class='col-md-1'><a href='actualizarInmueble.php?id=$arreglo[0]'><button class='btn btn-post'>Editar</button></div>";
-						echo "<div class='col-md-1'><a href='admin.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'/>Borrar</button></a></div>";
+						echo "<div class='col-md-1'><a href='listadoInmuebles.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'/>Borrar</button></a></div>";
 						
 
 						
@@ -111,14 +111,14 @@ if (@!$_SESSION['nombre']) {
 					extract($_GET);
 					if(@$idborrar==2){
 		
-						$sqlborrar="DELETE FROM inmuebles WHERE id=$id";
+						$sqlborrar="DELETE FROM inmuebles WHERE idInmuebles=$id";
 						$resborrar=mysql_query($sqlborrar);
-						echo '<script>alert("REGISTRO ELIMINADO")</script> ';
+						//echo '<script>alert("REGISTRO ELIMINADO")</script> ';
 						//header('Location: proyectos.php');
-						echo "<script>location.href='admin.php'</script>";
+						//echo "<script>location.href='listadoInmuebles.php'</script>";
 					}
 
-			?>
+			?> -->
 
 	</div>
 </div>

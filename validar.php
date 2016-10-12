@@ -13,7 +13,7 @@ session_start();
 		if($pass==$c1['pasadmin']){
 			$_SESSION['idInquilino']=$c1['idInquilino'];
 			$_SESSION['nombre']=$c1['nombre'];
-			echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
+			//echo '<script>alert("BIENVENIDO ADMINISTRADOR")</script> ';
 			echo "<script>location.href='admin.php'</script>";
 		}
 	}

@@ -71,13 +71,16 @@ if (@!$_SESSION['nombre']) {
       <label style="font-size: 14pt"><b>Postal</b></label>
       <input type="text" name="postal" class="form-control" required placeholder="Ingresa postal" />
     </div>
-    <div class="col-md-2">
+    <div class="col-md-4">
       <label style="font-size: 14pt"><b>Imagen</b></label>
-      <input type="file" name="imagen" id="imagen"class="form-control" placeholder="Subir Imagen" />
+      <input type="file" name="imagen" class="form-control" placeholder="Subir Imagen" />
     </div>
     <div class="col-md-4">
         <label style="font-size: 14pt; "><b>Ingresa el precio</b></label>
+        <div class="input-group">
+      <div class="input-group-addon">$</div>
         <input type="text" name="precio" class="form-control"  required placeholder="Ingresa el precio"/>
+    </div>
     </div>
         <div class="col-md-4">
         <label style="font-size: 14pt"><b>Elige el tipo</b></label>
@@ -87,18 +90,22 @@ if (@!$_SESSION['nombre']) {
         <option value="Piso">Piso</option>
       </select>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-8">
         <label style="font-size: 14pt; "><b>Ingresa la descripcion</b></label>
         <input type="text" name="descripcion" class="form-control"  placeholder="Ingresa descripcion" />
     </div>
-
     <div class="col-md-1">
       <br>
       <button  class="btn btn-success" type="submit" name="submit" value="Guardar">Guardar</button>
-      </div>
+     </div>
+     <div class="col-md-1">
+     <br> 
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='admin.php'"/>Cancelar</button>
     </div>
     </div>
     </div>
+    </div>
+  </fieldset>
         </form>    
         <?php
     if(isset($_POST['submit'])){

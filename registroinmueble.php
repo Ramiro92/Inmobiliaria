@@ -13,5 +13,5 @@ $destino="imagenes/".$imagen;
 copy($ruta,$destino);
 mysql_query("INSERT INTO inmuebles (codigo,numero,direccion,postal,imagen,precio,descripcion,tipo) VALUES('$codigo','$numero','$direccion','$postal','$imagen','$precio','$descripcion','$tipo')");
 
-header("Location: admin.php");
+header("Location: listadoInmuebles.php");
 ?>

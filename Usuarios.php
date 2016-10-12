@@ -58,74 +58,58 @@ if (@!$_SESSION['nombre']) {
 				require("conexion.php");
 				$sql=("SELECT * FROM inquilino");
 				$query=mysql_query($sql);
-					echo"<div class='container-fluid'>";
-					echo "<div class='row-fluid'>";				
-					echo "<div class='col-md-1'>Id</div>";
-					echo "<div class='col-md-1'>Nombre</div>";
-					echo "<div class='col-md-1'>Apellido</div>";
-					echo "<div class='col-md-1'>Direccion</div>";
-					echo "<div class='col-md-1'>Edad</div>";
-					echo "<div class='col-md-1'>DUI</div>";
-					echo "<div class='col-md-1'>NIT</div>";
-					echo "<div class='col-md-1'>Sexo</div>";
-					echo "<div class='col-md-1'>Numero de Cuenta</div>";
-					echo "<div class='col-md-1'>Fecha de Nacimiento</div>";
-					echo "<div class='col-md-1'>Contraseña Usuario</div>";
-					echo "<div class='col-md-1'>Contraseña Administrador</div>";
-					echo "<div class='col-md-1'>Correo</div>";
-					echo "<div class='col-md-1'>Editar</div>";
-					echo "<div class='col-md-1'>Borrar</div>";
+					echo "<div class='row'>";				
+				//	echo "<div class='col-md-1'><strong>Id</strong></div>";
+					echo "<div class='col-md-1'><strong>Nombre</strong></div>";
+					echo "<div class='col-md-1'><strong>Apellido</strong></div>";
+					echo "<div class='col-md-1'><strong>Direccion</strong></div>";
+				//	echo "<div class='col-md-1'><strong>Edad</strong></div>";
+					echo "<div class='col-md-1'><strong>DUI</strong></div>";
+					echo "<div class='col-md-1'><strong>NIT</strong></div>";
+					echo "<div class='col-md-1'><strong>Sexo</strong></div>";
+					echo "<div class='col-md-1'><strong>Numero de Cuenta</strong></div>";
+				//	echo "<div class='col-md-1'><strong>Fecha de Nacimiento</strong></div>";
+					echo "<div class='col-md-1'><strong>Contraseña Usuario</strong></div>";
+					echo "<div class='col-md-1'><strong>Contraseña Administrador</strong></div>";
+					echo "<div class='col-md-1'><strong>Correo</strong></div>";
+					echo "<div class='col-md-1'><strong>Editar</strong></div>";
+					echo "<div class='col-md-1'><strong>Borrar</strong></div>";
 					echo "</div>";
-					echo "</div>";
-
-
 			    
-			?>
-			  
+			?>			  
 			<?php 
 				 while($arreglo=mysql_fetch_array($query)){
-				 	echo"<div class='container-fluid'>";
-				  	echo "<div class='row-fluid'>";
-				    	echo "<div class='col-md-1'>$arreglo[0]</div>";
+				  	echo "<div class='row'>";
+				//ID    	echo "<div class='col-md-1'>$arreglo[0]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[1]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[2]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[3]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[4]</div>";
+				//EDAD    	echo "<div class='col-md-1'>$arreglo[4]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[5]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[6]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[7]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[8]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[9]</div>";
+				//FECHA DE NACIMIENTO    	echo "<div class='col-md-1'>$arreglo[9]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[10]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[11]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[12]</div>";
-
-				    	
-
 				    	echo "<div class='col-md-1'><a href='actualizar.php?id=$arreglo[0]'><button class='btn btn-post'>Editar</button></div>";
 						echo "<div class='col-md-1'><a href='admin.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'/>Borrar</button></a></div>";
-						
-
 					echo "</div>";	
-					echo "</div>";
 				}
 
 				echo "</div>";
-
 					extract($_GET);
-					if(@$idborrar==2){
-		
+					if(@$idborrar==2){		
 						$sqlborrar="DELETE FROM inquilino WHERE idInquilino=$id";
 						$resborrar=mysql_query($sqlborrar);
 						echo '<script>alert("REGISTRO ELIMINADO")</script> ';
 						//header('Location: proyectos.php');
 						echo "<script>location.href='admin.php'</script>";
 					}
-
 			?>
 				</div>
 </div>
-
 	<script src="Inmobiliaria/js/"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>				  
 </div>	

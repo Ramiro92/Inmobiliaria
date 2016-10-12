@@ -72,7 +72,7 @@
       <button  class="btn btn-success" type="submit" name="submit" value="Registrarse">Registrarse</button>
       <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='index.php'"/>Cancelar</button>
       <!-- <input type="button" class="bton bton-danger" onclick="location='index.php'"> -->
-      </div>
+    </div>
     </div>
     </div>
     </div>

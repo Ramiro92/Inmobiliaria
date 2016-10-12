@@ -23,7 +23,7 @@
 			<!-- Inicia Menu-->
 			<div class="collapse navbar-collapse" id="navegacion-BP">
 				<ul class="nav navbar-nav">
-					<li class="#"><a href="#">Inicio</a></li>
+					<li class="#"><a href="admin.php">Inicio</a></li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Inmuebles <span class="caret"></span></a>
 						<ul class="dropdown-menu" role="menu">
