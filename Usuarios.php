@@ -65,9 +65,9 @@ if (@!$_SESSION['nombre']) {
 					echo "<div class='col-md-1'><strong>Direccion</strong></div>";
 				//	echo "<div class='col-md-1'><strong>Edad</strong></div>";
 					echo "<div class='col-md-1'><strong>DUI</strong></div>";
-					echo "<div class='col-md-1'><strong>NIT</strong></div>";
+				//	echo "<div class='col-md-1'><strong>NIT</strong></div>";
 					echo "<div class='col-md-1'><strong>Sexo</strong></div>";
-					echo "<div class='col-md-1'><strong>Numero de Cuenta</strong></div>";
+					echo "<div class='col-md-2'><strong>Nº Cuenta</strong></div>";
 				//	echo "<div class='col-md-1'><strong>Fecha de Nacimiento</strong></div>";
 					echo "<div class='col-md-1'><strong>Contraseña Usuario</strong></div>";
 					echo "<div class='col-md-1'><strong>Contraseña Administrador</strong></div>";
@@ -86,9 +86,9 @@ if (@!$_SESSION['nombre']) {
 				    	echo "<div class='col-md-1'>$arreglo[3]</div>";
 				//EDAD    	echo "<div class='col-md-1'>$arreglo[4]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[5]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[6]</div>";
+				//NIT    	echo "<div class='col-md-1'>$arreglo[6]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[7]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[8]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[8]</div>";
 				//FECHA DE NACIMIENTO    	echo "<div class='col-md-1'>$arreglo[9]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[10]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[11]</div>";

@@ -96,7 +96,7 @@ if (@!$_SESSION['nombre']) {
     </div>
     <div class="col-md-1">
       <br>
-      <button  class="btn btn-success" type="submit" name="submit" value="Guardar">Guardar</button>
+      <button  class="btn btn-success" type="submit" name="submit" value="Guardar" >Guardar</button>
      </div>
      <div class="col-md-1">
      <br> 
@@ -113,14 +113,22 @@ if (@!$_SESSION['nombre']) {
     }
   ?>
         <br><br>
-        <?php
-        require_once 'conexion.php';
-        $sql=  mysql_query("select * from inmuebles");
-        while($res=  mysql_fetch_array($sql)){
 
-            echo '<img src="'.$res["imagen"].'" width="100" heigth="100"><br>';
-        }
-        ?>
+        <?php
+    include 'conexion.php';
+    $re=mysql_query("select * from inmuebles")or die(mysql_error());
+    while ($f=mysql_fetch_array($re)) {
+    ?>
+      <div class="col-md-1">
+      <center>
+        <img src="./imagenes/<?php echo $f['imagen'];?>"><br>
+        
+        
+      </center>
+    </div>
+  <?php
+    }
+  ?>
           <script src="Inmobiliaria/js/"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>         
 </div>  
