@@ -23,9 +23,9 @@
 			<!-- Inicia Menu-->
 			<div class="collapse navbar-collapse" id="navegacion-BP">
 				<ul class="nav navbar-nav">
-					<li class="#"><a href="admin.php">Inicio</a></li>
+					<li class="#"><a href="admin.php">Inicio <span class="glyphicon glyphicon-home"></a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Inmuebles <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Inmuebles <span class="glyphicon glyphicon-tasks"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li Class="#"><a href="listadoInmuebles.php">Listado de Inmuebles</a></li>
             				<li Class="#"><a href="nuevoInmueble.php">Nuevo Inmueble</a></li>
@@ -38,7 +38,7 @@
 						</ul>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Usuarios <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Usuarios <span class="glyphicon glyphicon-user"></span></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li Class="#"><a href="Usuarios.php">Listado de Usuarios</a></li>
             				<li Class="#"><a href="#">Concejo Directivo</a></li>
@@ -57,9 +57,9 @@
   						</ul>
 					</li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Contactenos <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Compras <span class="glyphicon glyphicon-shopping-cart"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li Class="#"><a href="#">Buzon de Sugerencias</a></li>
+							<li Class="#"><a href="index3.php">Compras</a></li>
             				<li Class="#"><a href="#">Ubicacion Geografica</a></li>
   						</ul>
 					</li>

@@ -53,7 +53,7 @@ if (@!$_SESSION['nombre']) {
     <div class="container">
     </head>
         <form action="" method="POST" enctype="multipart/form-data">
-            <center><fieldset>
+            <fieldset>
     <legend  style="font-size: 18pt"><b>Nuevo Inmueble</b></legend>
     <div class="col-md-2">
       <label style="font-size: 14pt"><b>Codigo</b></label>
@@ -80,6 +80,7 @@ if (@!$_SESSION['nombre']) {
         <div class="input-group">
       <div class="input-group-addon">$</div>
         <input type="text" name="precio" class="form-control"  required placeholder="Ingresa el precio"/>
+        <span class="input-group-addon">.00</span>
     </div>
     </div>
         <div class="col-md-4">

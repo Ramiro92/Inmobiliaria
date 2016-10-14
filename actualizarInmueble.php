@@ -104,6 +104,7 @@ if (@!$_SESSION['nombre']) {
 				        <div class="input-group">
 				        <div class="input-group-addon">$</div>
 				        <input type="text" name="precio" class="form-control" value= "<?php echo $precio ?>" required placeholder="Ingresa el precio"/>
+				        <span class="input-group-addon">.00</span>
 				    </div>
 				    </div>
 				    <div class="col-md-4">
