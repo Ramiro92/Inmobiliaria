@@ -9,10 +9,9 @@ if (@!$_SESSION['nombre']) {
   <head>
     <meta charset="utf-8">
     <title>Actualizar Usuarios</title>
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 			<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -22,115 +21,126 @@ if (@!$_SESSION['nombre']) {
 
 	<!-- Latest compiled and minified JavaScript -->
 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="css/estilos.css" rel="stylesheet"/>
   </head>
-<body data-offset="40" background="images/fondotot.jpg" style="background-attachment: fixed">
-<div class="container">
+<body>
+<div class="container-fluid">
 <header class="header">
 <div class="row">
 	<?php
-	include("include/cabecera.php");
+	//include("include/cabecera.php");
 	?>
 </div>
 </header>
 
   <!-- Navbar
     ================================================== -->
-
-
-<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navegacion-BP">
-					<span class="sr-only">Desplegar / Ocultar Menu</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="admin.php" class="navbar-brand">ADMINISTRADOR DEL SITIO</a>
-			</div>
-			<!-- Inicia Menu-->
-			<div class="collapse navbar-collapse" id="navegacion-BP">
-				<ul class="nav navbar-nav">
-					<li class="#"><a href="#">Inicio</a></li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Institucional</a>
-					</li>
-					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Personal <span class="caret"></span></a>
-						<ul class="dropdown-menu" role="menu">
-							<li Class="#"><a href="#">Docente</a></li>
-            				<li Class="#"><a href="#">Concejo Directivo</a></li>
-            				<li class="divider"></li>
-            				<li Class="#"><a href="#">Organigrama del CDE</a></li>
-            				<li Class="#"><a href="#">Funciones</a></li>
-  						</ul>
-					</li>
-					<li><a href="#">Servicios</a></li>
-					<li class="dropdown">
-						<a href="">Bienvenido <strong><?php echo $_SESSION['user'];?></strong> </a>
-					</li>
-					<li class="dropdown">
-						<a href="desconectar.php"> Cerrar Cesión </a>
-					</li>
-				</ul>
-				
-				</form>
-			</div>
-		</div>
-	</nav> 	
-
+<?php
+include("menu.php");
+?>
 <!-- ======================================================================================================================== -->
 
 
 		
 		
 <!--///////////////////////////////////////////////////Empieza cuerpo del documento interno////////////////////////////////////////////-->
-		<h2> Administración de usuarios registrados</h2>	
-		<div class="well well-small">
+		
+		<div class="container">
+			<h1>Administracion de Inmuebles Registrados</h1>
+		</div>
 
 		<div class="row-fluid">
 		<?php
 		extract($_GET);
 		require("conexion.php");
 
-		$sql="SELECT * FROM login WHERE id=$id";
+		$sql="SELECT * FROM inquilino WHERE idInquilino=$id";
 		$ressql=mysql_query($sql);
 		while ($row=mysql_fetch_row ($ressql)){
-		    	$id=$row[0];
-		    	$user=$row[1];
-		    	$pass=$row[2];
-		    	$email=$row[3];
-		    	$pasadmin=$row[4];
+		    	$idInquilino=$row[0];
+		    	$nombre=$row[1];
+		    	$apellido=$row[2];
+		    	$direccion=$row[3];
+		    	$edad=$row[4];
+		    	$DUI=$row[5];
+		    	$NIT=$row[6];
+		    	$sexo=$row[7];
+		    	$numero_cuenta=$row[8];
+		    	$fecha_nacimiento=$row[9];
+		    	$pass=$row[10];
+		    	$passadmin=$row[11];
+		    	$email=$row[12];
 		    }
 		?>
- <form action="ejecutaactualizar.php" method="post"  >
-	  <fieldset>
-		    <legend  style="font-size: 18pt"><b>Edicion de Usuarios</b></legend>
-			    <div class="form-group">
-			      <label style="font-size: 14pt"><b>Id</b></label><br>
-			      <input type="text" name="id" value= "<?php echo $id ?>" readonly="readonly">
-			    </div>
-			    <div class="form-group">
-			      <label style="font-size: 14pt; "><b>Usuario</b></label> <br>
-			      <input type="text" name="user" value="<?php echo $user?>"/>
-			    </div>
-			    <div class="form-group">
-			      <label style="font-size: 14pt; "><b>Contraseña de Usuario</b></label><br>
-			      <input type="text" name="pass" value="<?php echo $pass?>"/>
-			    </div>
-			    <div class="form-group">
-			      <label style="font-size: 14pt"><b>Correo de usuario</b></label><br>
-			      <input type="text" name="email" value="<?php echo $email?>" />
-			    </div>
-			    <div class="form-group">
-			      <label style="font-size: 14pt"><b>Contraseña administrador</b></label><br>
-			      <input type="text" name="pasadmin" value="<?php echo $pasadmin?>" />
-			    </div>
-				      <button  class="btn btn-success" type="submit" name="submit" value="Guardar">Guardar</button>
-				      <button class="btn btn-danger" type="submit" name="cancelar"value="Cancelar" onclick = "location='admin.php'"/>Cancelar</button>
-		</fieldset>
+
+ <div class="container">
+    <form action="ejecutaactualizar.php" method="post"  >
+  <fieldset>
+    <legend  style="font-size: 18pt"><b>Edicion Usuarios</b></legend>
+    <div class="row">
+    <div class="col-md-6">
+      <label style="font-size: 14pt"><b>Nombre</b></label>
+      <input type="text" name="nombre" class="form-control" placeholder="Ingresa tu nombre" value="<?php echo $nombre?>" />
+    </div>
+    <div class="col-md-6">
+      <label style="font-size: 14pt; "><b>Apellido</b></label>
+      <input type="text" name="apellido" class="form-control"  required placeholder="Ingresa tu Apellido" value="<?php echo $apellido?>"/>
+    </div>
+        <div class="col-md-4">
+      <label style="font-size: 14pt"><b>Edad</b></label>
+      <input type="number" name="edad" min="18" max="99" class="form-control" required placeholder="Ingresa tu Edad" value="<?php echo $edad?>" />
+    </div>
+    <div class="col-md-4">
+      <label style="font-size: 14pt"><b>Sexo</b></label>
+      <select name="sexo" class="form-control" value="<?php echo $sexo?>">
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label style="font-size: 14pt"><b>Fecha de nacimiento</b></label>
+      <input type="date" name="fecha_nacimiento"  min="1980-01-01" max="2016-12-31" class="form-control" required placeholder="Fecha de nacimiento" value="<?php echo $fecha_nacimiento?>" />
+    </div>
+    <div class="col-md-7">
+      <label style="font-size: 14pt; "><b>Direccion</b></label>
+      <input type="text" name="direccion" class="form-control"  placeholder="Ingresa tu Direccion" value="<?php echo $direccion?>" />
+    </div>
+    <div class="col-md-5">
+      <label style="font-size: 14pt"><b>Correo</b></label>
+      <input type="email" name="email" class="form-control" required placeholder="Ingresa tu correo" value="<?php echo $email?>" />
+    </div>
+    <div class="col-md-6">
+      <label style="font-size: 14pt"><b>DUI</b></label>
+      <input type="text" name="DUI" class="form-control" maxlength="10" required placeholder="Ingresa tu DUI" value="<?php echo $DUI?>" />
+    </div>
+    <div class="col-md-6">
+      <label style="font-size: 14pt"><b>NIT</b></label>
+      <input type="text" name="NIT" class="form-control" maxlength="17" required placeholder="Ingresa tu NIT" value="<?php echo $NIT?>"/>
+    </div>
+    <div class="col-md-12">
+      <label style="font-size: 14pt"><b>Numero de cuenta</b></label>
+      <input type="text" name="numero_cuenta" class="form-control"  maxlength="11" required placeholder="Ingresa tu numero de cuenta" value="<?php echo $numero_cuenta?>" />
+    </div>
+    <div class="col-md-6">
+      <label style="font-size: 14pt"><b>Contraseña</b></label>
+      <input type="text" name="pass" class="form-control" required placeholder="Ingresa tu Contraseña" value="<?php echo $pass?>"/>
+    </div>
+    <div class="col-md-6">
+      <label style="font-size: 14pt"><b>Contraseña Administrador</b></label>
+      <input type="text" name="passadmin" class="form-control" required placeholder="Repite tu contraseña" value="<?php echo $passadmin?>"/>
+    </div>
+    <div class="col-md-9">
+      <br>
+      <button  class="btn btn-success" type="submit" name="submit" value="Actualizar">Actualizar</button>
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"/>Cancelar</button>
+      <!-- <input type="button" class="bton bton-danger" onclick="location='index.php'"> -->
+    </div>
+    </div>
+    </div>
+    </div>
+  </fieldset>
 </form>
+</div>
 
 				  
 
@@ -140,23 +150,15 @@ if (@!$_SESSION['nombre']) {
 		<!--EMPIEZA DESLIZABLE-->
 		
 		 <!--TERMINA DESLIZABLE-->
-
-
-
-		
-		
 		</div>
 
-		
 
 
 		
 
 <!--///////////////////////////////////////////////////Termina cuerpo del documento interno////////////////////////////////////////////-->
-</div>
 
-	</div>
-</div>
+
 <!-- Footer
       ================================================== -->
 <hr class="soften"/>

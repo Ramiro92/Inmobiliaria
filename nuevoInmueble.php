@@ -20,7 +20,7 @@ if (@!$_SESSION['nombre']) {
 
   <!-- Latest compiled and minified JavaScript -->
 
-    <link type="text/css"href="css/inmueble.css" rel="stylesheet"/>
+    <link type="text/css" href="css/estilos.css" rel="stylesheet"/>
 
 
   </head>
@@ -174,5 +174,5 @@ if (@!$_SESSION['nombre']) {
   </style>
   <script src="js/jquery.js"></script>
   <script src="js/bootstrap.min.js"></script>
-    </body>
+  </body>
 </html>    

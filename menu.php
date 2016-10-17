@@ -60,10 +60,11 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Compras <span class="glyphicon glyphicon-shopping-cart"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li Class="#"><a href="index3.php">Compras</a></li>
-            				<li Class="#"><a href="#">Ubicacion Geografica</a></li>
+            				<li Class="#"><a href="./admin/agregarproducto.php">Nueva Compra</a></li>
+            				<li Class="#"><a href="./admin/modificar.php">Editar Compra</a></li>
   						</ul>
 					</li>
-					<li><a href="">Bienvenido <strong><?php echo $_SESSION['nombre'];?></strong> </a></li>
+					<li><a href="admin.php">Bienvenido <strong><?php echo $_SESSION['nombre'];?></strong> </a></li>
 					<li><a href="desconectar.php">Cerrar Sesion</a></li>
 				</ul>
 				<!-- <form action="" class="navbar-form navbar-right" role="search">
