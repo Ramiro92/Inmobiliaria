@@ -29,29 +29,27 @@
 						<ul class="dropdown-menu" role="menu">
 							<li Class="#"><a href="listadoInmuebles.php">Listado de Inmuebles</a></li>
             				<li Class="#"><a href="nuevoInmueble.php">Nuevo Inmueble</a></li>
-            				<li Class="#"><a href="#">Ideario</a></li>
-            				<li Class="#"><a href="#">Oferta Academica</a></li>
-            				<li Class="#"><a href="#">Mensaje del Director(a)</a></li>
-            				<li Class="#"><a href="#">Historia del Centro Escolar</a></li>
-            				<li Class="#"><a href="#">Marco Legal</a></li>
-            				<li Class="#"><a href="#">Reglamento Interno</a></li>
+            				<li Class="#"><a href="admin1.php">Ventas totales</a></li>
+            				<li Class="#"><a href="agregarproducto.php">Agregar inmuebles para vender</a></li>
+           					<li Class="#"><a href="modificar.php">Modificar inmuebles de ventas</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Usuarios <span class="glyphicon glyphicon-user"></span></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li Class="#"><a href="Usuarios.php">Listado de Usuarios</a></li>
-            				<li Class="#"><a href="#">Concejo Directivo</a></li>
-            				<li class="divider"></li>
-            				<li Class="#"><a href="#">Organigrama del CDE</a></li>
-            				<li Class="#"><a href="#">Funciones</a></li>
+            				
   						</ul>
 					</li>
-					<li><a href="#">Servicios</a></li>
 					<li class="dropdown">
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Proyectos <span class="caret"></span></a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Alquiler <span class="glyphicon glyphicon-tags"></span> </a>
+							<ul class="dropdown-menu" role="menu">
+								<li Class="#"><a href="alquiler.php">Listado de alquiler</a></li>
+							</ul>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Reportes <span class="glyphicon glyphicon-list-alt"></span></a>
 						<ul class="dropdown-menu" role="menu">
-							<li Class="#"><a href="#">Escuela de Padres y Madres</a></li>
             				<li Class="#"><a href="#">Prevencion de Desastres</a></li>
             				<li class="#" ><a href="#">Recreos Orientados</a></li>
   						</ul>
@@ -60,12 +58,12 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">Compras <span class="glyphicon glyphicon-shopping-cart"></span></a>
 						<ul class="dropdown-menu" role="menu">
 							<li Class="#"><a href="index3.php">Compras</a></li>
-            				<li Class="#"><a href="./admin/agregarproducto.php">Nueva Compra</a></li>
-            				<li Class="#"><a href="./admin/modificar.php">Editar Compra</a></li>
+            			<!--	<li Class="#"><a href="./admin/agregarproducto.php">Nueva Compra</a></li>
+            				<li Class="#"><a href="./admin/modificar.php">Editar Compra</a></li> -->
   						</ul>
 					</li>
 					<li><a href="admin.php">Bienvenido <strong><?php echo $_SESSION['nombre'];?></strong> </a></li>
-					<li><a href="desconectar.php">Cerrar Sesion</a></li>
+					<li><a href="desconectar.php">Cerrar Sesion <span class="glyphicon glyphicon-off"></span></a></li>
 				</ul>
 				<!-- <form action="" class="navbar-form navbar-right" role="search">
 					<div class="form-group">

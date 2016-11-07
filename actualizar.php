@@ -131,8 +131,8 @@ include("menu.php");
     </div>
     <div class="col-md-9">
       <br>
-      <button  class="btn btn-success" type="submit" name="submit" value="Actualizar">Actualizar</button>
-      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"/>Cancelar</button>
+      <button  class="btn btn-success" type="submit" name="submit" value="Actualizar">Actualizar <span class="glyphicon glyphicon-ok-circle"></span></button>
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
       <!-- <input type="button" class="bton bton-danger" onclick="location='index.php'"> -->
     </div>
     </div>
@@ -161,12 +161,7 @@ include("menu.php");
 
 <!-- Footer
       ================================================== -->
-<hr class="soften"/>
-<footer class="footer">
 
-<hr class="soften"/>
-<p>&copy; Copyright Ramiro Amaya<br/><br/></p>
- </footer>
 </div><!-- /container -->
 
     <!-- Le javascript

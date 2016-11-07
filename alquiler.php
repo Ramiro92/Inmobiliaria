@@ -48,7 +48,7 @@ if (@!$_SESSION['nombre']) {
 		<div class="row-fluid">
 		<header>
 		<div class="container">
-			<h1>Administracion de Inmuebles Registrados</h1>
+			<h1>Administracion de Alquileres</h1>
 		</div>
 	</header>
 <div class="container well well-small">
@@ -58,19 +58,17 @@ if (@!$_SESSION['nombre']) {
 			<?php
 
 				require("conexion.php");
-				$sql=("SELECT * FROM inmuebles");
+				$sql=("SELECT * FROM productos");
 				$query=mysql_query($sql);
 
 				echo "<div class='row'>";				
 						echo "<div class='col-md-1'>Id</div>";
-						echo "<div class='col-md-1'>Codigo</div>";
-						echo "<div class='col-md-1'>Numero</div>";
-						echo "<div class='col-md-2'>Direccion</div>";
-						echo "<div class='col-md-1'>Postal</div>";
-						echo "<div class='col-md-1'>Imagen</div>";
-						echo "<div class='col-md-1'>Precio</div>";
+						echo "<div class='col-md-1'>Nombre</div>";
 						echo "<div class='col-md-1'>Descripcion</div>";
-						echo "<div class='col-md-1'>Tipo</div>";
+						echo "<div class='col-md-2'>Imagen</div>";
+						echo "<div class='col-md-1'>Precio</div>";
+						echo "<div class='col-md-1'>Inquilino_IdInquilino</div>";
+						echo "<div class='col-md-1'>Estado</div>";
 						echo "<div class='col-md-1'>Editar</div>";
 						echo "<div class='col-md-1'>Eliminar</div>";												
 					echo "</div>";
@@ -88,9 +86,6 @@ if (@!$_SESSION['nombre']) {
 				    	echo "<div class='col-md-2'>$arreglo[3]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[4]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[5]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[6]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[7]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[8]</div>";
 
 				    	echo "<div class='col-md-1'><a href='actualizarInmueble.php?id=$arreglo[0]'><button class='btn btn-post'>Editar <span class='glyphicon glyphicon-edit'></span></button></div>";
 						echo "<div class='col-md-1'><a href='listadoInmuebles.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger '/>Borrar <span class='glyphicon glyphicon-trash'></span></button></a></div>";

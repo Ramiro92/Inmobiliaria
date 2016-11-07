@@ -70,8 +70,8 @@ if (@!$_SESSION['nombre']) {
 				<h2><?php echo $f['descripcion'];?></h2>
 				<h3>Precio: <?php echo $f['precio'];?></h3><br>
 				<div class="contenedor-botones">
-						<a href="./carritodecompras.php?id=<?php  echo $f['id'];?>" class="btn btn-primary">Añadir al carrito de compras</a>
-						<a href="./index3.php" class="btn btn-danger">Cancelar</a>
+						<a href="./carritodecompras.php?id=<?php  echo $f['id'];?>" class="btn btn-primary">Añadir al carrito de compras <span class="glyphicon glyphicon-plus"></span></a>
+						<a href="./index3.php" class="btn btn-danger">Cancelar <span class="glyphicon glyphicon-ban-circle"></span></a>
 					</div>
 					<br>
 				</article>

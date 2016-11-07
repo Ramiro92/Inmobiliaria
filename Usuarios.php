@@ -93,8 +93,8 @@ if (@!$_SESSION['nombre']) {
 				    	echo "<div class='col-md-1'>$arreglo[10]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[11]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[12]</div>";
-				    	echo "<div class='col-md-1'><a href='actualizar.php?id=$arreglo[0]'><button class='btn btn-post'>Editar</button></div>";
-						echo "<div class='col-md-1'><a href='admin.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'/>Borrar</button></a></div>";
+				    	echo "<div class='col-md-1'><a href='actualizar.php?id=$arreglo[0]'><button class='btn btn-post'>Editar <span class='glyphicon glyphicon-edit'></span></button></div>";
+						echo "<div class='col-md-1'><a href='admin.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'/>Borrar <span class='glyphicon glyphicon-trash'></span></button></a></div>";
 					echo "</div>";	
 				}
 
@@ -140,10 +140,7 @@ if (@!$_SESSION['nombre']) {
 <!-- Footer
       ================================================== -->
 
-<footer class="footer">
 
-<p>&copy; Copyright Ramiro Amaya <br/><br/></p>
- </footer>
 </div><!-- /container -->
 
     <!-- Le javascript

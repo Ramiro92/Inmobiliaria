@@ -39,7 +39,69 @@ if (@!$_SESSION['nombre']) {
 	<?php
 	include("menu.php");
 	?>
+	<script>        BootstrapDialog.show({
+            title: 'Default Title',
+            message: 'Click buttons below.',
+            buttons: [{
+                label: 'Message 1',
+                action: function(dialog) {
+                    dialog.setMessage('Message 1');
+                }
+            }, {
+                label: 'Message 2',
+                action: function(dialog) {
+                    dialog.setMessage('Message 2');
+                }
+            }]
+        });</script>
+        <script>
+$('#ventana').click(function(){
+    $('#ventana').modal('show');
+});
+</script>
+	<!-- Trigger the modal with a button -->
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="">
+		<br>
+		<a href="#ventana" class="btn btn-primary btn-lg" data-toggle="modal">Boton</a>
+		<div class="modal fade" tabindex="-1" role="dialog" id="ventana">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <!-- ======================================================================================================================== -->
 
 		
@@ -93,7 +155,7 @@ if (@!$_SESSION['nombre']) {
 				    	echo "<div class='col-md-1'>$arreglo[8]</div>";
 
 				    	echo "<div class='col-md-1'><a href='actualizarInmueble.php?id=$arreglo[0]'><button class='btn btn-post'>Editar <span class='glyphicon glyphicon-edit'></span></button></div>";
-						echo "<div class='col-md-1'><a href='listadoInmuebles.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger '/>Borrar <span class='glyphicon glyphicon-trash'></span></button></a></div>";
+						echo "<div class='col-md-1'><a href='listadoInmuebles.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'/>Borrar <span class='glyphicon glyphicon-trash'></span></button></a></div>";
 						
 
 						
@@ -115,22 +177,6 @@ if (@!$_SESSION['nombre']) {
 			?>
 
 	</div>
-	<div class="modal fade in" id="modalActualizado" style="display: none;">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<a data-dismiss="modal" class="close">×</a>
-				<h3>Se actualizó su pedido</h3>
-			 </div>
-			 <div class="modal-body">
-				 <p>Gracias por alquilar el producto #<span id="numID"></span></p>              
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-				</div>
-	</div>
-</div>
 </div>
 
 	<script src="Inmobiliaria/js/"></script>

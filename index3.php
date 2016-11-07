@@ -70,7 +70,7 @@ if (@!$_SESSION['nombre']) {
 					
 					<p class="post-contenido text-justify"></p>
 					<div class="contenedor-botones">
-						<a href="./detalles.php?id=<?php  echo $f['id'];?>" class="btn btn-primary">Detalles del producto</a>
+						<a href="./detalles.php?id=<?php  echo $f['id'];?>" class="btn btn-primary">Detalles del producto <span class="glyphicon glyphicon-info-sign"></span></a>
 					</div>
 					<br>
 				</article>

@@ -69,8 +69,8 @@
     </div>
     <div class="col-md-9">
       <br>
-      <button  class="btn btn-success" type="submit" name="submit" value="Registrarse">Registrarse</button>
-      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='index.php'"/>Cancelar</button>
+      <button  class="btn btn-success" type="submit" name="submit" value="Registrarse">Registrarse <span class="glyphicon glyphicon-ok-circle"></span></button>
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='index.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
       <!-- <input type="button" class="bton bton-danger" onclick="location='index.php'"> -->
     </div>
     </div>

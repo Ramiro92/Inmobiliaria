@@ -72,7 +72,7 @@ if (@!$_SESSION['nombre']) {
 		    }
 		?>
         <form action="ejecutaactualizarInmueble.php" method="POST" enctype="multipart/form-data">
-            <center>
+
             	<fieldset>
     				<legend  style="font-size: 18pt"><b>Edicion de Inmuebles</b></legend>
 					   <div class="col-md-2">
@@ -119,16 +119,13 @@ if (@!$_SESSION['nombre']) {
 				        <label style="font-size: 14pt; "><b>Ingresa la descripcion</b></label>
 				        <input type="text" name="descripcion" class="form-control" value= "<?php echo $descripcion ?>"  placeholder="Ingresa descripcion" />
 				    </div>
-					<div class="col-md-1">
+					<div class="col-md-3">
 					 <br>
-					 <button  class="btn btn-success" type="submit" name="submit" value="Guardar">Guardar</button>
-					</div>
-					<div class="col-md-1">
-					  <br> 
-					  <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"/>Cancelar</button>
+					 <button  class="btn btn-success" type="submit" name="submit"  value="Guardar">Guardar <span class="glyphicon glyphicon-ok-circle"></span></button>
+					 <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
 					</div>
 					</div>
-				    </div>
+					</div>
 				    </div>
 			</fieldset>
         </form>    
@@ -163,10 +160,7 @@ if (@!$_SESSION['nombre']) {
 <!-- Footer
       ================================================== -->
 
-<footer class="footer">
 
-<p>&copy; Copyright Ramiro Amaya <br/><br/></p>
- </footer>
 </div><!-- /container -->
 
     <!-- Le javascript

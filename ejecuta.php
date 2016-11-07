@@ -1,5 +1,5 @@
 <?php 
-	include "../conexion.php";
+	include "conexion.php";
 	if($_POST['Caso']=="Eliminar"){
 		mysql_query("delete from productos where Id=".$_POST['Id']);
 		unlink("../productos/".$_POST['Imagen']);

@@ -29,7 +29,7 @@
             <a href="registrese.php">registrese</a>
           </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Ingresar <span class="glyphicon glyphicon-ok"></span></button>
       </form>
     </div>
     </div>
