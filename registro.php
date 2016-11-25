@@ -26,7 +26,7 @@
 				mysql_query("INSERT INTO inquilino (nombre, apellido, direccion, edad, DUI, NIT, sexo, numero_cuenta, fecha_nacimiento, pass, email) VALUES ('$nombre','$apellido','$direccion','$edad','$DUI','$NIT','$sexo','$numero_cuenta','$fecha_nacimiento','$pass','$email')");
 				//echo 'Se ha registrado con exito';
 				echo ' <script language="javascript">alert("Usuario registrado con éxito");</script> ';
-				header('Location:index.php');
+				echo "<script>location.href='index.php'</script>";
 			}
 			
 		}else{

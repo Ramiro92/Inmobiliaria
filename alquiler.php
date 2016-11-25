@@ -58,20 +58,36 @@ if (@!$_SESSION['nombre']) {
 			<?php
 
 				require("conexion.php");
-				$sql=("SELECT * FROM productos");
+
+				$sql=("SELECT * FROM inmuebles");
 				$query=mysql_query($sql);
 
-				echo "<div class='row'>";				
-						echo "<div class='col-md-1'>Id</div>";
-						echo "<div class='col-md-1'>Nombre</div>";
-						echo "<div class='col-md-1'>Descripcion</div>";
-						echo "<div class='col-md-2'>Imagen</div>";
-						echo "<div class='col-md-1'>Precio</div>";
-						echo "<div class='col-md-1'>Inquilino_IdInquilino</div>";
-						echo "<div class='col-md-1'>Estado</div>";
-						echo "<div class='col-md-1'>Editar</div>";
-						echo "<div class='col-md-1'>Eliminar</div>";												
-					echo "</div>";
+		    echo ' 
+				<div class="row">			
+				<div class="col-md-1">Id</div>
+				<div class="col-md-1">Tipo</div>
+				<div class="col-md-2">Numero</div>
+				<div class="col-md-2">Descripcion</div>
+				<div class="col-md-2">Precio</div>	
+				<div class="col-md-1">Editar</div>	
+				<div class="col-md-1">Eliminar</div>									
+					</div>';
+
+				// $sql=("SELECT * FROM productos");
+				// $query=mysql_query($sql);
+
+				// echo "<div class='row'>";				
+				// 		echo "<div class='col-md-1'>Id</div>";
+				// 		echo "<div class='col-md-1'>Nombre</div>";
+				// 		echo "<div class='col-md-1'>Descripcion</div>";
+				// 		echo "<div class='col-md-2'>Imagen</div>";
+				// 		echo "<div class='col-md-1'>Precio</div>";
+				// 		echo "<div class='col-md-1'>Inquilino_IdInquilino</div>";
+				// 		echo "<div class='col-md-1'>Estado</div>";
+				// 		echo "<div class='col-md-1'>Editar</div>";
+				// 		echo "<div class='col-md-1'>Eliminar</div>";												
+				// 	echo "</div>";
+
 
 
 			    
@@ -80,22 +96,34 @@ if (@!$_SESSION['nombre']) {
 			<?php 
 				 while($arreglo=mysql_fetch_array($query)){
 				  	echo "<div class='row'>";
+
+				    	// echo "<div class='col-md-2'>$arreglo[0]</div>";
+				    	// echo "<div class='col-md-2'>$arreglo[8]</div>";
+				    	// echo "<div class='col-md-2'>$arreglo[2]</div>";
+				    	// echo "<div class='col-md-2'>$arreglo[7]</div>";
+				    	// echo "<div class='col-md-2'>$arreglo[6]</div>";
+
 				    	echo "<div class='col-md-1'>$arreglo[0]</div>";
 				    	echo "<div class='col-md-1'>$arreglo[1]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[2]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[2]</div>";
 				    	echo "<div class='col-md-2'>$arreglo[3]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[4]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[5]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[4]</div>";
+				    	//echo "<div class='col-md-2'>$arreglo[5]</div>";
 
-				    	echo "<div class='col-md-1'><a href='actualizarInmueble.php?id=$arreglo[0]'><button class='btn btn-post'>Editar <span class='glyphicon glyphicon-edit'></span></button></div>";
-						echo "<div class='col-md-1'><a href='listadoInmuebles.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger '/>Borrar <span class='glyphicon glyphicon-trash'></span></button></a></div>";
+
+				    	echo "<div class='col-md-1'><a href='actualizarInmueble.php?id=$arreglo[0]'><button class='btn btn-post' data-toggle='popover' data-placement='left' data-trigger='hover' data-content='Editar'>Editar <span class='glyphicon glyphicon-edit'></span></button></div>";
+						echo "<div class='col-md-1'><a href='listadoInmuebles.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger 'data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Eliminar'>Eliminar <span class='glyphicon glyphicon-trash'></span></button></a></div>";
 						
 
 						
 					echo "</div>";
 				}
 
+
+		//		echo "</div>";
+
 				echo "</div>";
+
 
 					extract($_GET);
 					if(@$idborrar==2){
@@ -169,5 +197,10 @@ if (@!$_SESSION['nombre']) {
 	</style>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
   </body>
 </html>

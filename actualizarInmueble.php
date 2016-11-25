@@ -21,6 +21,9 @@ if (@!$_SESSION['nombre']) {
   <!-- Latest compiled and minified JavaScript -->
 
     <link type="text/css"href="css/inmueble.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
   </head>
@@ -81,7 +84,7 @@ if (@!$_SESSION['nombre']) {
 					   </div>
 				    <div class="col-md-2">
 				      <label style="font-size: 14pt"><b>Codigo</b></label>
-				      <input type="text" name="codigo" class="form-control" value= "<?php echo $codigo?>" placeholder="Ingresa el codigo" />
+				      <input type="text" name="codigo" class="form-control" value= "<?php echo $codigo?>" required placeholder="Ingresa el codigo" />
 				    </div>
 				    <div class="col-md-2">
 				      <label style="font-size: 14pt; "><b>Numero</b></label>
@@ -89,7 +92,7 @@ if (@!$_SESSION['nombre']) {
 				    </div>
 				    <div class="col-md-6">
 				      <label style="font-size: 14pt; "><b>Direccion</b></label>
-				      <input type="text" name="direccion" class="form-control" value= "<?php echo $direccion ?>" placeholder="Ingresa direccion" />
+				      <input type="text" name="direccion" class="form-control" value= "<?php echo $direccion ?>" required placeholder="Ingresa direccion" />
 				    </div>
 				     <div class="col-md-2">
 				      <label style="font-size: 14pt"><b>Postal</b></label>
@@ -97,7 +100,7 @@ if (@!$_SESSION['nombre']) {
 				    </div>
 				    <div class="col-md-4">
 				      <label style="font-size: 14pt"><b>Imagen</b></label>
-				      <input type="file" name="imagen"  class="form-control" value= "<?php echo $imagen ?>" placeholder="Subir Imagen" />
+				      <input type="file" name="imagen"  class="form-control" value= "<?php echo $imagen ?>" required placeholder="Subir Imagen" />
 				    </div>
 				    <div class="col-md-6">
 				        <label style="font-size: 14pt; "><b>Ingresa el precio</b></label>
@@ -117,12 +120,12 @@ if (@!$_SESSION['nombre']) {
 				    </div>
 				    <div class="col-md-8">
 				        <label style="font-size: 14pt; "><b>Ingresa la descripcion</b></label>
-				        <input type="text" name="descripcion" class="form-control" value= "<?php echo $descripcion ?>"  placeholder="Ingresa descripcion" />
+				        <input type="text" name="descripcion" class="form-control" value= "<?php echo $descripcion ?>"  required placeholder="Ingresa descripcion" />
 				    </div>
 					<div class="col-md-3">
 					 <br>
-					 <button  class="btn btn-success" type="submit" name="submit"  value="Guardar">Guardar <span class="glyphicon glyphicon-ok-circle"></span></button>
-					 <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
+					 <button  class="btn btn-success" type="submit" name="submit"  value="Guardar" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="Guardar">Guardar <span class="glyphicon glyphicon-ok-circle"></span></button>
+					 <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Cancelar">Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
 					</div>
 					</div>
 					</div>
@@ -166,11 +169,12 @@ if (@!$_SESSION['nombre']) {
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-  </style>
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
     </body>
 </html>  
 

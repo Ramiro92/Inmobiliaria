@@ -25,7 +25,7 @@ session_start();
 		if($pass==$c2['pass']){
 			$_SESSION['idInquilino']=$c2['idInquilino'];
 			$_SESSION['nombre']=$c2['nombre'];
-			echo "<script>location.href='Usuarios.php'</script>";
+			echo "<script>location.href='adminUsu.php'</script>";
 		}else{
 			echo '<script>alert("CONTRASEÑA INCORRECTA")</script> ';
 		

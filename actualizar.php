@@ -74,7 +74,7 @@ include("menu.php");
 		?>
 
  <div class="container">
-    <form action="ejecutaactualizar.php" method="post"  >
+    <form action="" method="post"  >
   <fieldset>
     <legend  style="font-size: 18pt"><b>Edicion Usuarios</b></legend>
     <div class="row">
@@ -123,16 +123,16 @@ include("menu.php");
     </div>
     <div class="col-md-6">
       <label style="font-size: 14pt"><b>Contraseña</b></label>
-      <input type="text" name="pass" class="form-control" required placeholder="Ingresa tu Contraseña" value="<?php echo $pass?>"/>
+      <input type="text" name="pass" class="form-control" placeholder="Ingresa tu Contraseña" value="<?php echo $pass?>"/>
     </div>
     <div class="col-md-6">
       <label style="font-size: 14pt"><b>Contraseña Administrador</b></label>
-      <input type="text" name="passadmin" class="form-control" required placeholder="Repite tu contraseña" value="<?php echo $passadmin?>"/>
+      <input type="text" name="passadmin" class="form-control" placeholder="Repite tu contraseña" value="<?php echo $passadmin?>"/>
     </div>
     <div class="col-md-9">
       <br>
-      <button  class="btn btn-success" type="submit" name="submit" value="Actualizar">Actualizar <span class="glyphicon glyphicon-ok-circle"></span></button>
-      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
+      <button  class="btn btn-success" type="submit" name="submit" value="Guardar" data-toggle='popover' data-placement='left' data-trigger='hover' data-content='Guardar'>Guardar <span class="glyphicon glyphicon-ok-circle"></span></button>
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='listadoInmuebles.php'" data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Cancelar'>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
       <!-- <input type="button" class="bton bton-danger" onclick="location='index.php'"> -->
     </div>
     </div>
@@ -143,7 +143,11 @@ include("menu.php");
 </div>
 
 				  
-
+<?php
+    if(isset($_POST['submit'])){
+      require("ejecutaactualizar.php");
+    }
+  ?> 
 		
 
 
@@ -169,6 +173,11 @@ include("menu.php");
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+      <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 	</style>
   </body>
 </html>

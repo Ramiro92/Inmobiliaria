@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
 session_start();
 if (@!$_SESSION['nombre']) {
@@ -9,7 +9,7 @@ if (@!$_SESSION['nombre']) {
 <html lang="es">
 <head>
 	<meta charset="utf-8"/>
-	<title>Carrito de Compras</title>
+	<title>Quienes Somos</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +37,7 @@ if (@!$_SESSION['nombre']) {
 </div>
 	<header>
 	<?php
-	include("menu.php");
+	include("menuUsu.php");
 	?>
 	<div class="row">
 	
@@ -50,42 +50,42 @@ if (@!$_SESSION['nombre']) {
 			<div class="row-fluid">
 		<header>
 		<div class="container">
-			<h1>Administracion de Inmuebles Registrados</h1>
+			<h1>Contactenos</h1>
 		</div>
-	<section>
-		
-	<?php
-		include 'conexion.php';
-		$re=mysql_query("select * from productos where id=".$_GET['id'])or die(mysql_error());
-		while ($f=mysql_fetch_array($re)) {
-		?>
-			
-<section class="main container">
-		<div class="row">
-			<section class="posts col-md-8">
-				<div class="col-md-offset-5">
-				<article class="post clearfix">
-				<img class="img-responsive img-circle" src="./productos/<?php echo $f['imagen'];?>"><br>
-				<h1>Nombre: <?php echo $f['nombre'];?></h1>
-				<h2>Descripcion: <?php echo $f['descripcion'];?></h2>
-				<h3>Precio: $<?php echo $f['precio'];?></h3><br>
-				<div class="contenedor-botones">
-						<a href="./carritodecompras.php?id=<?php  echo $f['id'];?>" class="btn btn-primary" data-toggle='popover' data-placement='left' data-trigger='hover' data-content='añadir al carrito'>Añadir al carrito de compras <span class="glyphicon glyphicon-plus"></span></a>
-						<a href="./index3.php" class="btn btn-danger" data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Cancelar'>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></a>
-					</div>
-					<br>
-				</article>
-				</div>
-			</section>
-
-	<?php
-		}
-	?>		
-	</section>
-<script>
-$(document).ready(function(){
-    $('[data-toggle="popover"]').popover();
-});
-</script>	
+		<div class="col-md-offset-2"><img src="imagenes/gp.jpg" alt=""></div>
+		<br>
+		<div class="col-md-3">
+			<b>Telefonos:</b>
+			<p></p> 
+			+503 2382-4488
+			+503 7532-0829
+		</div>
+		<div class="col-md-2">
+			<b>Correo:</b>
+			<p></p>
+			info@inmobiliariarm.com
+		</div>
+		<div class="col-md-4">
+			<b>Direccion:</b>
+			<p></p>
+			Barrio Santa Barbara, 10a Calle Oriente. Col Buenos Aires #2.
+		</div>
+		<div class="col-md-6">
+			<div class="agent_contanct_form">
+			<h4 id="show_contact">Contáctenos</h4>
+			<div class="alert-box error">
+			<div class="alert-message" id="alert-agent-contact"></div>
+			</div> 
+			<input name="contact_name" id="agent_contact_name" type="text" placeholder="Su nombre" aria-required="true" class="form-control">
+			<input type="text" name="email" class="form-control" id="agent_user_email" aria-required="true" placeholder="Su email">
+			<input type="text" name="phone" class="form-control" id="agent_phone" placeholder="Su Teléfono">
+			<textarea id="agent_comment" name="comment" class="form-control" cols="45" rows="8" aria-required="true" placeholder="Su mensaje"></textarea>	
+			<input type="submit" class="btn  btn-info" id="agent_submit" value="Enviar mensaje">
+			<input name="prop_id" type="hidden" id="agent_property_id" value="0">
+			<input name="prop_id" type="hidden" id="agent_id" value="0">
+			<input type="hidden" name="contact_ajax_nonce" id="agent_property_ajax_nonce" value="7020c8c3d0">
+			</div>
+			<br>
+		</div>
 </body>
 </html>

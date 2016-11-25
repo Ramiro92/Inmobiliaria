@@ -6,8 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Registro</title>
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/estilos.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head> 
 <body>
   <header>
@@ -18,7 +19,7 @@
     <div class="row">
     <div class="col-md-6">
       <label style="font-size: 14pt"><b>Ingresa tu nombre</b></label>
-      <input type="text" name="nombre" class="form-control" placeholder="Ingresa tu nombre" />
+      <input type="text" name="nombre" class="form-control" required placeholder="Ingresa tu nombre" />
     </div>
     <div class="col-md-6">
       <label style="font-size: 14pt; "><b>Ingresa tu Apellido</b></label>
@@ -29,8 +30,8 @@
       <input type="number" name="edad" min="18" max="99" class="form-control" required placeholder="Ingresa tu Edad" />
     </div>
     <div class="col-md-4">
-      <label style="font-size: 14pt"><b>Sexo</b></label>
-      <select name="sexo" class="form-control">
+      <label style="font-size: 14pt" ><b>Sexo</b></label>
+      <select name="sexo" class="form-control" required placeholder="sexo">
         <option value="Masculino">Masculino</option>
         <option value="Femenino">Femenino</option>
       </select>
@@ -41,7 +42,7 @@
     </div>
     <div class="col-md-7">
       <label style="font-size: 14pt; "><b>Ingresa tu Direccion</b></label>
-      <input type="text" name="direccion" class="form-control"  placeholder="Ingresa tu Direccion" />
+      <input type="text" name="direccion" class="form-control" required placeholder="Ingresa tu Direccion" />
     </div>
     <div class="col-md-5">
       <label style="font-size: 14pt"><b>Ingresa tu Correo</b></label>
@@ -69,8 +70,8 @@
     </div>
     <div class="col-md-9">
       <br>
-      <button  class="btn btn-success" type="submit" name="submit" value="Registrarse">Registrarse <span class="glyphicon glyphicon-ok-circle"></span></button>
-      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='index.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
+      <button  class="btn btn-success" type="submit" name="submit" value="Registrarse" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="Registrarse">Registrarse <span class="glyphicon glyphicon-ok-circle"></span></button>
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='index.php'" data-toggle="popover" data-trigger="hover" data-content="Cancelar">Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
       <!-- <input type="button" class="bton bton-danger" onclick="location='index.php'"> -->
     </div>
     </div>
@@ -93,5 +94,10 @@
     </table>
     </div></center></div></center>
 </header>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
 </body>
 </html>    

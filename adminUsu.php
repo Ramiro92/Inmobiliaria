@@ -38,7 +38,7 @@ if (@!$_SESSION['nombre']) {
     ================================================== -->
 
 	<?php
-	include("./menu.php");
+	include("./menuUsu.php");
 	?>
     <?php
 	include("./cabecera.php");

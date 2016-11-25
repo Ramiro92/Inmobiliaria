@@ -1,7 +1,6 @@
-﻿<!DOCTYPE html>
 <?php
 session_start();
-if (@!$_SESSION['nombre']) {
+if (@!$_SESSION['nombre']){
 	header("Location:index.php");
 }
 ?>
@@ -9,7 +8,7 @@ if (@!$_SESSION['nombre']) {
 <html lang="es">
 <head>
 	<meta charset="utf-8"/>
-	<title>Carrito de Compras</title>
+	<title>Detalle Inmueble</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -37,7 +36,7 @@ if (@!$_SESSION['nombre']) {
 </div>
 	<header>
 	<?php
-	include("menu.php");
+	include("menuUsu.php");
 	?>
 	<div class="row">
 	
@@ -50,13 +49,14 @@ if (@!$_SESSION['nombre']) {
 			<div class="row-fluid">
 		<header>
 		<div class="container">
-			<h1>Administracion de Inmuebles Registrados</h1>
+			<h1>Detalles del Inmueble</h1>
 		</div>
 	<section>
 		
 	<?php
 		include 'conexion.php';
-		$re=mysql_query("select * from productos where id=".$_GET['id'])or die(mysql_error());
+		$re=mysql_query("SELECT * FROM inmuebles WHERE idInmuebles=".$_GET['id'])or die(mysql_error());
+		//echo "SELECT * FROM inmuebles WHERE idInmuebles=".$_GET['id'];
 		while ($f=mysql_fetch_array($re)) {
 		?>
 			
@@ -65,14 +65,13 @@ if (@!$_SESSION['nombre']) {
 			<section class="posts col-md-8">
 				<div class="col-md-offset-5">
 				<article class="post clearfix">
-				<img class="img-responsive img-circle" src="./productos/<?php echo $f['imagen'];?>"><br>
-				<h1>Nombre: <?php echo $f['nombre'];?></h1>
+				<img class="img-responsive img-circle" src="./imagenes/<?php echo $f['imagen'];?>"><br>
+				<h1>Tipo: <?php echo $f['tipo'];?></h1>
 				<h2>Descripcion: <?php echo $f['descripcion'];?></h2>
 				<h3>Precio: $<?php echo $f['precio'];?></h3><br>
 				<div class="contenedor-botones">
-						<a href="./carritodecompras.php?id=<?php  echo $f['id'];?>" class="btn btn-primary" data-toggle='popover' data-placement='left' data-trigger='hover' data-content='añadir al carrito'>Añadir al carrito de compras <span class="glyphicon glyphicon-plus"></span></a>
-						<a href="./index3.php" class="btn btn-danger" data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Cancelar'>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></a>
-					</div>
+
+               	</div>
 					<br>
 				</article>
 				</div>

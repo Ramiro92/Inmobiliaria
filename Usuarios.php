@@ -60,18 +60,18 @@ if (@!$_SESSION['nombre']) {
 				$query=mysql_query($sql);
 					echo "<div class='row'>";				
 				//	echo "<div class='col-md-1'><strong>Id</strong></div>";
-					echo "<div class='col-md-1'><strong>Nombre</strong></div>";
-					echo "<div class='col-md-1'><strong>Apellido</strong></div>";
-					echo "<div class='col-md-1'><strong>Direccion</strong></div>";
+					echo "<div class='col-md-2'><strong>Nombre</strong></div>";
+					echo "<div class='col-md-2'><strong>Apellido</strong></div>";
+				//	echo "<div class='col-md-1'><strong>Direccion</strong></div>";
 				//	echo "<div class='col-md-1'><strong>Edad</strong></div>";
-					echo "<div class='col-md-1'><strong>DUI</strong></div>";
+					echo "<div class='col-md-2'><strong>DUI</strong></div>";
 				//	echo "<div class='col-md-1'><strong>NIT</strong></div>";
-					echo "<div class='col-md-1'><strong>Sexo</strong></div>";
+					echo "<div class='col-md-2'><strong>Sexo</strong></div>";
 					echo "<div class='col-md-2'><strong>Nº Cuenta</strong></div>";
 				//	echo "<div class='col-md-1'><strong>Fecha de Nacimiento</strong></div>";
-					echo "<div class='col-md-1'><strong>Contraseña Usuario</strong></div>";
-					echo "<div class='col-md-1'><strong>Contraseña Administrador</strong></div>";
-					echo "<div class='col-md-1'><strong>Correo</strong></div>";
+				//	echo "<div class='col-md-1'><strong>Contraseña Usuario</strong></div>";
+				//	echo "<div class='col-md-1'><strong>Contraseña Administrador</strong></div>";
+				//	echo "<div class='col-md-1'><strong>Correo</strong></div>";
 					echo "<div class='col-md-1'><strong>Editar</strong></div>";
 					echo "<div class='col-md-1'><strong>Borrar</strong></div>";
 					echo "</div>";
@@ -81,20 +81,22 @@ if (@!$_SESSION['nombre']) {
 				 while($arreglo=mysql_fetch_array($query)){
 				  	echo "<div class='row'>";
 				//ID    	echo "<div class='col-md-1'>$arreglo[0]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[1]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[2]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[3]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[1]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[2]</div>";
+				 //Dire   	echo "<div class='col-md-1'>$arreglo[3]</div>";
 				//EDAD    	echo "<div class='col-md-1'>$arreglo[4]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[5]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[5]</div>";
 				//NIT    	echo "<div class='col-md-1'>$arreglo[6]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[7]</div>";
-				    	echo "<div class='col-md-2'>$arreglo[8]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[7]</div>";
+				//contra    	echo "<div class='col-md-2'>$arreglo[8]</div>";
 				//FECHA DE NACIMIENTO    	echo "<div class='col-md-1'>$arreglo[9]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[10]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[11]</div>";
-				    	echo "<div class='col-md-1'>$arreglo[12]</div>";
-				    	echo "<div class='col-md-1'><a href='actualizar.php?id=$arreglo[0]'><button class='btn btn-post'>Editar <span class='glyphicon glyphicon-edit'></span></button></div>";
-						echo "<div class='col-md-1'><a href='admin.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger'/>Borrar <span class='glyphicon glyphicon-trash'></span></button></a></div>";
+				  //contra  	echo "<div class='col-md-1'>$arreglo[10]</div>";
+				    	echo "<div class='col-md-2'>$arreglo[11]</div>";
+				    	//echo "<div class='col-md-1'>$arreglo[12]</div>";
+				    	echo "<div class='col-md-1'><a href='actualizar.php?id=$arreglo[0]'><button class='btn btn-post' data-toggle='popover' data-placement='left' data-trigger='hover' data-content='Editar'>Editar <span class='glyphicon glyphicon-edit'></span></button></div>";
+
+						echo "<div class='col-md-1'><a href='Usuarios.php?id=$arreglo[0]&idborrar=2'><button class='btn btn-danger' data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Eliminar'>Borrar <span class='glyphicon glyphicon-trash'></span></button></a></div>";
+
 					echo "</div>";	
 				}
 
@@ -105,7 +107,7 @@ if (@!$_SESSION['nombre']) {
 						$resborrar=mysql_query($sqlborrar);
 						echo '<script>alert("REGISTRO ELIMINADO")</script> ';
 						//header('Location: proyectos.php');
-						echo "<script>location.href='admin.php'</script>";
+						echo "<script>location.href='Usuarios.php'</script>";
 					}
 			?>
 				</div>
@@ -151,5 +153,10 @@ if (@!$_SESSION['nombre']) {
 	</style>
 	<script src="js/jquery.js"></script>
 	<script src="js/bootstrap.min.js"></script>
+	<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
   </body>
 </html>

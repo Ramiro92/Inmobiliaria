@@ -1,7 +1,11 @@
 ﻿<!DOCTYPE html>
 <?php
 session_start();
+
+	include ("conexion.php");
+
 	include "conexion.php";
+
 	if(isset($_SESSION['Usuario'])){
 
 	}else{
@@ -57,13 +61,21 @@ session_start();
 		<div class="row-fluid">
 		<header>
 		<div class="container">
-			<h1>Administracion de Inmuebles Registrados</h1>
+
+			<h1></h1>
+		</div>
+	</header>
+	<div class="container">
+        <form action="altaproducto.php" method="POST" enctype="multipart/form-data">
+            <fieldset>
+
 		</div>
 	</header>
 	<div class="container">
         <form action="" method="POST" enctype="multipart/form-data">
             <fieldset>
-    <legend  style="font-size: 18pt"><b>Agregar Producto</b></legend>
+  <center> <br> <legend  style="font-size: 18pt"><b>Agregar Inmuebles</b></legend></br></center>
+
     <div class="col-md-2">
       <label style="font-size: 14pt"><b>Nombre</b></label>
       <input type="text" name="nombre" class="form-control" placeholder="Ingresa el Nombre" />
@@ -86,21 +98,37 @@ session_start();
     </div>
     <div class="col-md-3">
       <br>
-      <button  class="btn btn-success" type="submit" name="submit" value="Guardar" >Guardar <span class="glyphicon glyphicon-ok-circle"></button>
-      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='admin.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
+
+      <button  class="btn btn-success" type="submit" name="submit" value="Guardar" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="Guardar">Guardar <span class="glyphicon glyphicon-ok-circle"></button>
+
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='admin.php'" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Cancelar">Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
     </div>
     </div>
     </div>
     </div>
   </fieldset>
+
+         </form>	
+        
+
         </form>	
          <?php
     if(isset($_POST['submit'])){
       require("altaproducto.php");
     }
   ?>
+
 	
 		<script src="../js/jquery.js"></script>
 	<script src="../js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>  
 </body>
+
 </html>
+
+
+

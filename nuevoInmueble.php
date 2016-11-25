@@ -21,6 +21,9 @@ if (@!$_SESSION['nombre']) {
   <!-- Latest compiled and minified JavaScript -->
 
     <link type="text/css" href="css/estilos.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
   </head>
@@ -47,14 +50,14 @@ if (@!$_SESSION['nombre']) {
     <div class="row-fluid">
     <header>
     <div class="container">
-      <h1>Administracion de Inmuebles Registrados</h1>
+      
     </div>
   </header>  
     <div class="container">
  
         <form action="" method="POST" enctype="multipart/form-data">
             <fieldset>
-    <legend  style="font-size: 18pt"><b>Nuevo Inmueble</b></legend>
+   <center> <legend  style="font-size: 18pt"><b>Nuevo Inmueble</b></legend></center>
     <div class="col-md-2">
       <label style="font-size: 14pt"><b>Codigo</b></label>
       <input type="text" name="codigo" class="form-control" placeholder="Ingresa el codigo" />
@@ -97,8 +100,8 @@ if (@!$_SESSION['nombre']) {
     </div>
     <div class="col-md-3">
       <br>
-      <button  class="btn btn-success" type="submit" name="submit" value="Guardar" data-toggle="tooltip" data-placement="left" title="Tooltip on left" >Guardar <span class="glyphicon glyphicon-ok-circle"></button>
-      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='admin.php'"/>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
+      <button  class="btn btn-success" type="submit" name="submit" value="Guardar" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="Guardar">Guardar <span class="glyphicon glyphicon-ok-circle"></button>
+      <button  class="btn btn-danger" type="submit" name="cancelar" value="Cancelar" onclick = "location='admin.php'" data-toggle="popover" data-placement="right" data-trigger="hover" data-content="Cancelar">Cancelar <span class="glyphicon glyphicon-ban-circle"></span></button>
     </div>
     </div>
     </div>
@@ -112,21 +115,7 @@ if (@!$_SESSION['nombre']) {
   ?>
         <br><br>
 
-        <?php
-    include 'conexion.php';
-    $re=mysql_query("select * from inmuebles")or die(mysql_error());
-    while ($f=mysql_fetch_array($re)) {
-    ?>
-      <div class="col-md-1">
-      <center>
-        <img src="./imagenes/<?php echo $f['imagen'];?>"><br>
         
-        
-      </center>
-    </div>
-  <?php
-    }
-  ?>
           <script src="Inmobiliaria/js/"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>         
 </div>  
@@ -162,10 +151,11 @@ if (@!$_SESSION['nombre']) {
     <!-- Le javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="bootstrap/js/jquery-1.8.3.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-  </style>
-  <script src="js/jquery.js"></script>
-  <script src="js/bootstrap.min.js"></script>
+ 
+    <script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+});
+</script>
   </body>
 </html>    

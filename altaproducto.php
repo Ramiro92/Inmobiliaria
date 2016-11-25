@@ -1,5 +1,5 @@
 <?php
-	include ("../conexion.php");
+	include ("conexion.php");
 	if(!isset($_POST['nombre']) &&  !isset($_POST['descripcion']) && !isset($_POST['precio'])){
 		header("Location: agregarproducto.php");
 	}else{
@@ -22,12 +22,12 @@
 		    	//subimos la imagen
 
 		    	$imagen= $random.'_'.$_FILES["file"]["name"];
-		    	if(file_exists("../productos/".$random.'_'.$_FILES["file"]["name"])){
+		    	if(file_exists("./productos/".$random.'_'.$_FILES["file"]["name"])){
 		      		echo $_FILES["file"]["name"] . " Ya existe. ";
 		      	}else{
 		      		move_uploaded_file($_FILES["file"]["tmp_name"],
-		      		"../productos/" .$random.'_'.$_FILES["file"]["name"]);
-		      		echo "Archivo guardado en " . "../productos/" .$random.'_'. $_FILES["file"]["name"];
+		      		"./productos/" .$random.'_'.$_FILES["file"]["name"]);
+		      		echo "Archivo guardado en " . "./productos/" .$random.'_'. $_FILES["file"]["name"];
 		      		$producto=$_POST['nombre'];
 					$descripcion=$_POST['descripcion'];
 					$precio=$_POST['precio'];

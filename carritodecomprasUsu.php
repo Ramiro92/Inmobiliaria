@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 	session_start();
 	include './conexion.php';
 	if(isset($_SESSION['carrito'])){
@@ -98,7 +98,7 @@
 							class="cantidad">
 						</span><br>
 						<span class="subtotal">Subtotal:<?php echo $datos[$i]['Cantidad']*$datos[$i]['Precio'];?></span><br>
-						<a href="#" class="eliminar" data-id="<?php echo $datos[$i]['Id']?>">Eliminar</a>
+						<a href="../js1/eliminar.php" class="eliminar" data-id="<?php echo $datos[$i]['Id']?>">Eliminar</a>
 					</center>
 				</div>
 			<?php
@@ -135,7 +135,7 @@
 			}
 			
 		?>
-		<center><a href="./index3.php">Ver catalogo</a></center>
+		<center><a href="./index3Usu.php">Ver catalogo</a></center>
 
 		
 	</section>

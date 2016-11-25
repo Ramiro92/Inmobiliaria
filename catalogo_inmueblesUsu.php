@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
 session_start();
 if (@!$_SESSION['nombre']) {
@@ -8,7 +8,6 @@ if (@!$_SESSION['nombre']) {
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="utf-8"/>
 	<title>Carrito de Compras</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -27,8 +26,10 @@ if (@!$_SESSION['nombre']) {
 
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
 	<script type="text/javascript"  href="./js1/scripts.js"></script>
+
 </head>
-<body><div class="container-fluid">
+<body>
+	<div class="container-fluid">
 <header class="header">
 <div class="row">
 	<?php
@@ -37,7 +38,7 @@ if (@!$_SESSION['nombre']) {
 </div>
 	<header>
 	<?php
-	include("menu.php");
+	include("menuUsu.php");
 	?>
 	<div class="row">
 	
@@ -56,36 +57,33 @@ if (@!$_SESSION['nombre']) {
 		
 	<?php
 		include 'conexion.php';
-		$re=mysql_query("select * from productos where id=".$_GET['id'])or die(mysql_error());
+		$re=mysql_query("select * from inmuebles")or die(mysql_error());
 		while ($f=mysql_fetch_array($re)) {
 		?>
-			
-<section class="main container">
+			<section class="main container">
 		<div class="row">
-			<section class="posts col-md-8">
-				<div class="col-md-offset-5">
+			<section class="posts col-md-4">
+				<div class="col-md-12">
 				<article class="post clearfix">
-				<img class="img-responsive img-circle" src="./productos/<?php echo $f['imagen'];?>"><br>
-				<h1>Nombre: <?php echo $f['nombre'];?></h1>
-				<h2>Descripcion: <?php echo $f['descripcion'];?></h2>
-				<h3>Precio: $<?php echo $f['precio'];?></h3><br>
-				<div class="contenedor-botones">
-						<a href="./carritodecompras.php?id=<?php  echo $f['id'];?>" class="btn btn-primary" data-toggle='popover' data-placement='left' data-trigger='hover' data-content='añadir al carrito'>Añadir al carrito de compras <span class="glyphicon glyphicon-plus"></span></a>
-						<a href="./index3.php" class="btn btn-danger" data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Cancelar'>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></a>
+				<img class="img-responsive img-circle" src="./imagenes/<?php echo $f['imagen'];?>"><br>
+				<strong><?php echo $f['tipo'];?></strong><br>				
+					
+					<p class="post-contenido text-justify"></p>
+					<div class="contenedor-botones">
+						<a href="./detalle_inmuebleUsu.php?id=<?php  echo $f['idInmuebles'];?>" class="btn btn-primary" data-toggle='popover' data-placement='left' data-trigger='hover' data-content='Ver detalles'>Detalles del producto <span class="glyphicon glyphicon-info-sign"></span></a>
 					</div>
 					<br>
 				</article>
 				</div>
 			</section>
-
 	<?php
 		}
-	?>		
-	</section>
-<script>
+	?>
+
+	<script>
 $(document).ready(function(){
     $('[data-toggle="popover"]').popover();
 });
-</script>	
+</script>
 </body>
 </html>

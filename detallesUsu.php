@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <?php
 session_start();
 if (@!$_SESSION['nombre']) {
@@ -37,7 +37,7 @@ if (@!$_SESSION['nombre']) {
 </div>
 	<header>
 	<?php
-	include("menu.php");
+	include("menuUsu.php");
 	?>
 	<div class="row">
 	
@@ -70,8 +70,8 @@ if (@!$_SESSION['nombre']) {
 				<h2>Descripcion: <?php echo $f['descripcion'];?></h2>
 				<h3>Precio: $<?php echo $f['precio'];?></h3><br>
 				<div class="contenedor-botones">
-						<a href="./carritodecompras.php?id=<?php  echo $f['id'];?>" class="btn btn-primary" data-toggle='popover' data-placement='left' data-trigger='hover' data-content='añadir al carrito'>Añadir al carrito de compras <span class="glyphicon glyphicon-plus"></span></a>
-						<a href="./index3.php" class="btn btn-danger" data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Cancelar'>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></a>
+						<a href="./carritodecomprasUsu.php?id=<?php  echo $f['id'];?>" class="btn btn-primary" data-toggle='popover' data-placement='left' data-trigger='hover' data-content='añadir al carrito'>Añadir al carrito de compras <span class="glyphicon glyphicon-plus"></span></a>
+						<a href="./index3Usu.php" class="btn btn-danger" data-toggle='popover' data-placement='right' data-trigger='hover' data-content='Cancelar'>Cancelar <span class="glyphicon glyphicon-ban-circle"></span></a>
 					</div>
 					<br>
 				</article>
@@ -80,7 +80,8 @@ if (@!$_SESSION['nombre']) {
 
 	<?php
 		}
-	?>		
+	?>
+			
 	</section>
 <script>
 $(document).ready(function(){
